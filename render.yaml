@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: n8n-on-render
+    env: docker
+    plan: free
+    repo: <your_github_user>/n8n-on-render
+    region: oregon
+    branch: main
+    dockerfilePath: Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: WEBHOOK_TUNNEL_URL
+        value: https://<render_url>
